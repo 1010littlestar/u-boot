@@ -83,7 +83,7 @@
 /*Network configuration*/
 #define CONFIG_PHY_GIGE
 #ifdef CONFIG_NET_HIGMACV300
-#define CONFIG_GMAC_NUMS        2
+#define CONFIG_GMAC_NUMS        1
 #define CONFIG_HIGMAC_PHY0_ADDR     1
 #define CONFIG_HIGMAC_PHY0_INTERFACE_MODE   2 /* rgmii 2, rmii 1, mii 0 */
 #define CONFIG_HIGMAC_PHY1_ADDR     3
