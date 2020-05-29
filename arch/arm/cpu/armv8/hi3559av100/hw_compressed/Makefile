@@ -71,7 +71,7 @@ SSRC  := arch/arm/cpu/armv8/$(SOC)/start.S \
 	lib/hw_dec/hw_decompress_v2.c \
 	lib/hw_dec/hw_decompress_v2.h
 
-REG := $(wildcard $(TOPDIR)/*.reg $(TOPDIR)/.reg)
+REG := $(wildcard $(TOPDIR)/reg_files/reg_info.bin)
 SRC := $(notdir $(SSRC))
 
 ################################################################################

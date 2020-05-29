@@ -18,7 +18,12 @@ make CROSS_COMPILE=aarch64-himix100-linux-
 3. 生成最终u-boot-hi3559av100.bin
 拷贝reg.bin文件,并执行编译
 ```
-cp ./reg_files/reg_info.bin ./.reg
 make CROSS_COMPILE=aarch64-himix100-linux- u-boot-z.bin
 ```
+
+4. 删除u-boot-z生成文件
+```
+make CROSS_COMPILE=aarch64-himix100-linux- u-boot-z.clean
+```
+
 
