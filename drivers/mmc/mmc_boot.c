@@ -163,7 +163,7 @@ int mmc_set_boot_config(struct mmc *mmc)
 		}
 	}
 
-	boot_part = 0x7; /*user area enable for boot*/
+	boot_part = 0x1; /* boot0 enable for boot */
 	if (readl(REG_BASE_SCTL + REG_SYSSTAT) & NF_BOOTBW_MASK)
 		boot_bus_width = EXT_CSD_BUS_WIDTH_8; /* 8bits */
 	else
