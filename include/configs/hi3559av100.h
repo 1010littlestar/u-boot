@@ -133,6 +133,7 @@
 #define CONFIG_AUTO_SD_UPDATE       1
 #define CONFIG_AUTO_USB_UPDATE  1
 #define CONFIG_CMD_FAT  1
+#define CONFIG_CMD_EXT4  1
 #endif
 
 /*---------------------------------------------------------------------
