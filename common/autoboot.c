@@ -240,8 +240,6 @@ static int __abortboot(int bootdelay)
                     bootdelay = 0;	/* no more delay	*/
 # ifdef CONFIG_MENUKEY
                     menukey = getc();
-# else
-                    //(void) getc();  /* consume input	*/
 # endif
                     break;
                 }
