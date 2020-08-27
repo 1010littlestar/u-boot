@@ -241,7 +241,7 @@ static int __abortboot(int bootdelay)
 # ifdef CONFIG_MENUKEY
                     menukey = getc();
 # else
-                    (void) getc();  /* consume input	*/
+                    //(void) getc();  /* consume input	*/
 # endif
                     break;
                 }
