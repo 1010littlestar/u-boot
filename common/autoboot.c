@@ -212,6 +212,7 @@ static int __abortboot(int bootdelay)
 {
 	int abort = 0;
 	unsigned long ts;
+	char key = 0xff;
 
 #ifdef CONFIG_MENUPROMPT
 	printf(CONFIG_MENUPROMPT);
@@ -235,11 +236,13 @@ static int __abortboot(int bootdelay)
 		ts = get_timer(0);
 		do {
 			if (tstc()) {	/* we got a key press	*/
-                if (3 == getc()) {
+                /* ctrl+c for abort, ctrl+q for menucmd */
+                key = getc();
+                if (3 == key || 17 == key) {
                     abort  = 1;	/* don't auto boot	*/
                     bootdelay = 0;	/* no more delay	*/
 # ifdef CONFIG_MENUKEY
-                    menukey = getc();
+                    menukey = key;
 # endif
                     break;
                 }

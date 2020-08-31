@@ -209,6 +209,8 @@
 /* Assume we boot with root on the seventh partition of eMMC */
 #define CONFIG_BOOTARGS "mem=256M console=ttyAMA0,115200n8"
 #define CONFIG_BOOTCOMMAND "bootm 0x42000000"
+#define CONFIG_MENUKEY (0x17)
+#define CONFIG_MENUCMD ""
 #define CONFIG_SYS_USB_XHCI_MAX_ROOT_PORTS 2
 #define CONFIG_USB_MAX_CONTROLLER_COUNT 2
 #define BOOT_TARGET_DEVICES(func) \
