@@ -213,7 +213,7 @@
 #define CONFIG_MENUCMD "usb start; \
 if test -e mmc ${devnum}:${distro_bootpart} ${image_r}; then setenv devtype mmc; run load_recovery_files; \
 else if test -e usb ${devnum}:${distro_bootpart} ${image_r}; then setenv devtype usb; run load_recovery_files; \
-else dhcp ${image_addr} ${image_r}; dhcp ${initrd_addr_r} ${initrd_r}; fi; \
+else dhcp ${image_addr} ${image_r}; dhcp ${initrd_addr_r} ${initrd_r}; fi; fi; \
 setenv bootargs ${recovery_args}; bootm ${image_addr} - ${initrd_addr_r};"
 
 #define CONFIG_EXTRA_ENV_SETTINGS  \
@@ -225,7 +225,7 @@ setenv bootargs ${recovery_args}; bootm ${image_addr} - ${initrd_addr_r};"
     "distro_bootpart=1\0"          \
     "recovery_args=mem=4024M console=ttyAMA0,115200n8 root=/dev/ram0 rw ramdisk_size=0x10000000\0"  \
     "load_recovery_files=load ${devtype} ${devnum}:${distro_bootpart} ${image_addr} ${image_r};load ${devtype} ${devnum}:${distro_bootpart} ${initrd_addr_r} ${initrd_r}\0" \
-	"menucmd=" __stringify(CONFIG_MENUCMD) "\0" \
+	"menucmd=" CONFIG_MENUCMD "\0" \
 
 #define CONFIG_SYS_USB_XHCI_MAX_ROOT_PORTS 2
 #define CONFIG_USB_MAX_CONTROLLER_COUNT 2
