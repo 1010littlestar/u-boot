@@ -209,7 +209,7 @@
 /* Assume we boot with root on the seventh partition of eMMC */
 #define CONFIG_BOOTARGS "mem=256M console=ttyAMA0,115200n8"
 #define CONFIG_BOOTCOMMAND "bootm ${image_addr}"
-#define CONFIG_MENUKEY (0x17)
+#define CONFIG_MENUKEY (0x9)
 #define CONFIG_MENUCMD "usb start; \
 if test -e mmc ${devnum}:${distro_bootpart} ${image_r}; then setenv devtype mmc; run load_recovery_files; \
 else if test -e usb ${devnum}:${distro_bootpart} ${image_r}; then setenv devtype usb; run load_recovery_files; \

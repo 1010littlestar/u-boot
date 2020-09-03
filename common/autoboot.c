@@ -236,9 +236,9 @@ static int __abortboot(int bootdelay)
 		ts = get_timer(0);
 		do {
 			if (tstc()) {	/* we got a key press	*/
-                /* ctrl+c for abort, ctrl+q for menucmd */
+                /* ctrl+c for abort, ctrl+i for menucmd */
                 key = getc();
-                if (3 == key || 17 == key) {
+                if (3 == key || 9 == key) {
                     abort  = 1;	/* don't auto boot	*/
                     bootdelay = 0;	/* no more delay	*/
 # ifdef CONFIG_MENUKEY
