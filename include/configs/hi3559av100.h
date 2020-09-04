@@ -207,7 +207,7 @@
  */
 
 /* Assume we boot with root on the seventh partition of eMMC */
-#define CONFIG_BOOTARGS "mem=256M console=ttyAMA0,115200n8"
+#define CONFIG_BOOTARGS "mem=4032M console=ttyAMA0,115200n8"
 #define CONFIG_BOOTCOMMAND "bootm ${image_addr}"
 #define CONFIG_MENUKEY (0x9)
 #define CONFIG_MENUCMD "usb start; \
@@ -218,12 +218,12 @@ setenv bootargs ${recovery_args}; bootm ${image_addr} - ${initrd_addr_r};"
 
 #define CONFIG_EXTRA_ENV_SETTINGS  \
     "image_addr=0x42000000\0"      \
-    "initrd_addr_r=0x43000000\0"   \
+    "initrd_addr_r=0x60000000\0"   \
     "image_r=recovery.img\0"       \
     "initrd_r=recovery.rfs\0"      \
     "devnum=0\0"                   \
     "distro_bootpart=1\0"          \
-    "recovery_args=mem=4024M console=ttyAMA0,115200n8 root=/dev/ram0 rw ramdisk_size=0x10000000\0"  \
+    "recovery_args=mem=4032M console=ttyAMA0,115200n8 initrd=0x60000000,64M rw\0"  \
     "load_recovery_files=load ${devtype} ${devnum}:${distro_bootpart} ${image_addr} ${image_r};load ${devtype} ${devnum}:${distro_bootpart} ${initrd_addr_r} ${initrd_r}\0" \
 	"menucmd=" CONFIG_MENUCMD "\0" \
 
