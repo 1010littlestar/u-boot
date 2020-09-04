@@ -214,7 +214,7 @@
 if test -e mmc ${devnum}:${distro_bootpart} ${image_r}; then setenv devtype mmc; run load_recovery_files; \
 else if test -e usb ${devnum}:${distro_bootpart} ${image_r}; then setenv devtype usb; run load_recovery_files; \
 else dhcp ${image_addr} ${image_r}; dhcp ${initrd_addr_r} ${initrd_r}; fi; fi; \
-setenv bootargs ${recovery_args}; bootm ${image_addr} - ${initrd_addr_r};"
+setenv bootargs ${recovery_args}; bootm ${image_addr};"
 
 #define CONFIG_EXTRA_ENV_SETTINGS  \
     "image_addr=0x42000000\0"      \
