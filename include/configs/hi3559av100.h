@@ -207,8 +207,8 @@
  */
 
 /* Assume we boot with root on the seventh partition of eMMC */
-#define CONFIG_BOOTARGS "mem=4032M console=ttyAMA0,115200n8"
-#define CONFIG_BOOTCOMMAND "bootm ${image_addr}"
+#define CONFIG_BOOTARGS "mem=4032M console=ttyAMA0,115200n8 root=/dev/mmcblk0p5 rootfstype=ext4"
+#define CONFIG_BOOTCOMMAND "ext4load mmc 0:1 ${image_addr} ${image}; bootm ${image_addr}"
 #define CONFIG_MENUKEY (0x9)
 #define CONFIG_MENUCMD "usb start; \
 if test -e mmc ${devnum}:${distro_bootpart} ${image_r}; then setenv devtype mmc; run load_recovery_files; \
@@ -217,6 +217,7 @@ else dhcp ${image_addr} ${image_r}; dhcp ${initrd_addr_r} ${initrd_r}; fi; fi; \
 setenv bootargs ${recovery_args}; bootm ${image_addr};"
 
 #define CONFIG_EXTRA_ENV_SETTINGS  \
+    "image=fip.bin\0"              \
     "image_addr=0x42000000\0"      \
     "initrd_addr_r=0x60000000\0"   \
     "image_r=recovery.img\0"       \
